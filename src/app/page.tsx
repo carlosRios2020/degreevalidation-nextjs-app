@@ -41,7 +41,7 @@ export default function Home() {
         muted
         className="video-background"
       >
-        <source src="https://titulos-universitarios.s3.amazonaws.com/datos.mp4" type="video/mp4" />
+        <source src="https://titulos-universitarios.s3.amazonaws.com/blockchain3.mp4" type="video/mp4" />
         Tu navegador no soporta la reproducción de videos.
       </video>
 

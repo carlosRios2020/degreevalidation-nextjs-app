@@ -13,9 +13,11 @@ const Menu: React.FC = () => {
 
   const menuItems = [
     { name: 'Inicio', link: '/' },
+    { name: 'Registro', link: '/registro' },
     { name: 'Subir Documentos', link: '/subir-documentos' },
     { name: 'Verificar Autenticidad', link: '/verificar-documentos' },
-    { name: 'Registro', link: '/registro' },
+    { name: 'Estado de Validación', link: '/estado-validacion' },
+    
   ];
 
   return (
