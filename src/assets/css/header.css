@@ -1,0 +1,13 @@
+.logoName {
+    margin-left: 25px;
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+@media(max-width: 768px){
+    .logoName {
+        margin-left: 0px;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+}
