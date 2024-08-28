@@ -28,6 +28,21 @@ const UserRegistration: React.FC = () => {
             await provider.send("eth_requestAccounts", []); // Solicita la conexión de MetaMask
             const contract = await getContract(provider); // Se usa await aquí
 
+            const signer = provider.getSigner();
+            const userAddress = await signer.getAddress();
+
+            // Verificar si el usuario ya está registrado
+            const userInfo = await contract.users(userAddress);
+            if (userInfo.isRegistered) {
+                // Si el usuario ya está registrado, mostrar un mensaje de alerta
+                Swal.fire({
+                    title: 'Ya estás registrado',
+                    text: `Lo sentimos, pero ya estás registrado con esta billetera como ${userInfo.name}.`,
+                    icon: 'error',
+                });
+                return;
+            }
+
             // Convertir el tipo de documento al valor numérico esperado por el contrato
             const documentTypeNumeric = documentTypeEnum[data.documentType as keyof typeof documentTypeEnum];
 
