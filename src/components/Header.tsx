@@ -6,6 +6,7 @@ import { getProvider } from "../lib/contract";
 import Swal from "sweetalert2";
 import Menu from "./menu";
 import { motion } from "framer-motion";
+import "@/assets/css/header.css"
 
 const Header: React.FC = () => {
   const [walletAddress, setWalletAddress] = useState<string | null>(null);
@@ -38,7 +39,8 @@ const Header: React.FC = () => {
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Menu />
           <motion.h1
-            style={{ color: "white", marginLeft: "30px" }}
+            className="logoName"
+            style={{ color: "white" }}
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{
