@@ -1,40 +1,52 @@
 .vertical-menu-container {
-    position: fixed;
-    top: 4rem; /* Ajusta según la altura de tu header */
-    left: 0;
-    z-index: 1000;
-  }
-  
-  .menu-toggle-button {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: #fff;
-    cursor: pointer;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1010;
-  }
-  
-  .vertical-menu {
-    background-color: #333;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navItem {
-    margin-bottom: 1rem;
-  }
-  
-  .navLink {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-  }
-  
-  .navLink:hover {
-    text-decoration: underline;
-  }
-  
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle-button {
+  background-color: #1a202c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  outline: none;
+}
+
+.menu-toggle-button:hover {
+  background-color: #343a40;
+}
+
+.vertical-menu {
+  position: absolute;
+  top: 50px; /* Ajusta la posición para que esté alineado mejor */
+  left: 0;
+  background-color: #1a202ca3;
+  padding: 15px 0;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  min-width: 260px;
+}
+
+.vertical-menu .navItem {
+  margin: 0;
+  padding: 10px 20px;
+}
+
+.vertical-menu .navLink {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+}
+
+.vertical-menu .navLink:hover {
+  background-color: #199fdd;
+  color: black;
+  border-radius: 5px;
+  padding-left: 25px;
+}

@@ -5,6 +5,7 @@ import { AppBar, Toolbar, Button, Box } from "@mui/material";
 import { getProvider } from "../lib/contract";
 import Swal from "sweetalert2";
 import Menu from "./menu";
+import { motion } from "framer-motion";
 
 const Header: React.FC = () => {
   const [walletAddress, setWalletAddress] = useState<string | null>(null);
@@ -36,9 +37,24 @@ const Header: React.FC = () => {
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Menu />
-          <h1 style={{ color: "white", marginLeft: "20px" }}>
-            Validación de Títulos Profesionales
-          </h1>
+          <motion.h1
+            style={{ color: "white", marginLeft: "30px" }}
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+              delay: 0.5,
+            }}
+            whileHover={{
+              scale: 1.1,
+              rotate: 5,
+              transition: { yoyo: Infinity },
+            }}
+          >
+            CertiChain
+          </motion.h1>
         </Box>
         <Box>
           {walletAddress ? (

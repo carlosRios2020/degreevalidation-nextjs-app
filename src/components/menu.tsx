@@ -17,7 +17,6 @@ const Menu: React.FC = () => {
     { name: 'Subir Documentos', link: '/subir-documentos' },
     { name: 'Verificar Autenticidad', link: '/verificar-documentos' },
     { name: 'Estado de Validación', link: '/estado-validacion' },
-    
   ];
 
   return (
