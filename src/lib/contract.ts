@@ -623,16 +623,17 @@ const ABI = [
 		"type": "function"
 	}
 ];
+
 // Función para obtener una instancia del contrato
-export const getContract = async (provider: ethers.BrowserProvider) => {
-    const signer = await provider.getSigner(); // Se usa await aquí
+export const getContract = async (provider: ethers.providers.Web3Provider) => {
+    const signer = provider.getSigner(); // No necesitas await aquí
     return new ethers.Contract(CONTRACT_ADDRESS, ABI, signer);
 };
 
 // Función para obtener una instancia del proveedor
-export const getProvider = (): ethers.BrowserProvider => {
+export const getProvider = (): ethers.providers.Web3Provider => {
     if (typeof window !== 'undefined' && (window as any).ethereum) {
-        const provider = new ethers.BrowserProvider((window as any).ethereum);
+        const provider = new ethers.providers.Web3Provider((window as any).ethereum);
         return provider;
     } else {
         throw new Error("MetaMask no está instalado o no se puede acceder al objeto window.");

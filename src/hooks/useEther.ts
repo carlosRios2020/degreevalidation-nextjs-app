@@ -1,4 +1,4 @@
-// src/hooks/useEther.ts
+'use client';
 import { useState } from 'react';
 import { getProvider, getContract } from '@/lib/contract';
 import { ethers } from 'ethers';
