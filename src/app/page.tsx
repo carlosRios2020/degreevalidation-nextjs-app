@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import styles from './Home.module.css';
+import styles from '@/assets/css/Home.module.css';
 
 export default function Home() {
   const router = useRouter();
